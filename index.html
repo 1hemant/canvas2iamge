@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>
+    Highchart-Screen-Shot
+  </title>
+  <link rel="stylesheet" type="text/css" href="./CSS/contextMenu.css">
+  <link rel="stylesheet" type="text/css" href="./CSS/index.css">
+  <link rel="stylesheet" type="text/css" href="./CSS/spectrum.css">
+  <script   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="./JS/contextMenu.min.js"></script>
+  <script src="./JS/spectrum.js"></script>
+  <script src="./JS/html2canvas.js"></script>
+  <script src="./JS/fabric.min.js"></script>
+  <script src="./JS/index.js"></script>
+</head>
+<body>
+
+  <div>
+    <input type="button" id="btnAnnotate" value="Annotate" />
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  </div>
+  <div id="divAnnotation" style="display:none;">
+    FreeDraw
+    <input type="checkbox" id="freeDrawing" />
+    <button data-type="circle" class="active" data-drawing="false" title="Circle">C</button>
+    <button data-type="line" data-drawing="false" title="Line">L</button>
+    <button data-type="triangle" data-drawing="false" title="Triangle">T</button>
+    <button data-type="rectangle" data-drawing="false" title="Rectangle">R</button>
+    <input type="color" title="Fill Color" id="fillColor" />
+    <input type="color" title="Stroke Color" id="strokeColor" />
+    <button data-type="pencil" disabled data-drawing="true" title="Pencil">P</button>
+    <button data-type="square" disabled data-drawing="true" title="Square">S</button>
+    <button data-type="hline" disabled data-drawing="true" title="Hline">H</button>
+    <button data-type="diamond" disabled data-drawing="true" title="Diamond">D</button>
+    <button data-type="texture" disabled data-drawing="true" title="Texture">T</button>
+    <button data-type="vline" disabled data-drawing="true" title="Vline">V</button>
+  </div>
+  <canvas id="canvas" height="400" width="700"></canvas>
+
+</body>
+</html>
