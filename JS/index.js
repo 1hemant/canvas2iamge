@@ -45,8 +45,21 @@ $(function () {
     name: 'London',
     data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
   }]
-});
-});
+}); // end of highcharts function.
+$('#btnAnnotate').on('click', function(e) {
+  e.preventDefault();
+  $("#divAnnotation").css("display", "block");
+  html2canvas(document.getElementById("container"), {
+    onrendered: function(c) {
+      //canvas.setBackgroundImage(c.toDataURL(), canvas.renderAll.bind(canvas), {
+        //backgroundImageOpacity: 0.5,
+        //backgroundImageStretch: false
+      //});
+      document.body.appendChild(c);
+    }
+  });
+});// end of btnAnnotate function
+}); //end of page load function
 let canvas = new fabric.Canvas('canvas'),
   canvasContainer = $('#canvas').get(0),
   coordinate = {},
@@ -328,16 +341,3 @@ $('#freeDrawing').on('click', function() {
     $('[data-drawing="true"]').removeAttr('disabled')
   }
 });
-
-$('#btnAnnotate').on('click', function(e) {
-  e.preventDefault();
-  $("#divAnnotation").css("display", "block");
-  html2canvas(document.getElementById("container"), {
-    onrendered: function(c) {
-      canvas.setBackgroundImage(c.toDataURL(), canvas.renderAll.bind(canvas), {
-        backgroundImageOpacity: 0.5,
-        backgroundImageStretch: false
-      });
-    }
-  });
-})
